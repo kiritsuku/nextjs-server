@@ -14,7 +14,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_header("Content-type", "application/json")
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
-        completions = ["Berlin", "Berlin Mitte", "Hamburg"]
+        completions = ["Berlin", "Berlin Mitte", "Hamburg", "Brandenburg", "Baden", "Berlingerode", "Berlitt"]
         js = json.dumps({"completions": [w for w in completions if w.lower().startswith(term.lower())]})
         self.wfile.write(bytes(js, "utf-8"))
 
