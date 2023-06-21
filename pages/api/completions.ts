@@ -8,7 +8,7 @@ export interface CompletionDto {
 }
 
 async function getCompletions(term: string): Promise<CompletionDto> {
-  const res = await fetch(`http://${host}:${port}/completions?term=${term}`);
+  const res = await fetch(`http://${host}:${port}/completions?` + new URLSearchParams({term: term}));
   return res.json()
 }
 
